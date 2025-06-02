@@ -3,212 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Advanced Computer Vision AI Platform by Gabriel Demetrios Lafis">
-    <meta name="author" content="Gabriel Demetrios Lafis">
-    <title>Computer Vision AI Platform</title>
+    <title>Computer-Vision-AI - Gabriel Demetrios Lafis</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1><i class="fas fa-eye"></i> Computer Vision AI Platform</h1>
-                <p>Advanced AI-powered image analysis and object detection</p>
-                <div class="author-info">
-                    <span>Developed by Gabriel Demetrios Lafis</span>
-                </div>
-            </div>
-        </header>
-
-        <!-- Navigation -->
-        <nav class="nav-tabs">
-            <button class="tab-button active" data-tab="upload">Image Upload</button>
-            <button class="tab-button" data-tab="detection">Object Detection</button>
-            <button class="tab-button" data-tab="classification">Classification</button>
-            <button class="tab-button" data-tab="analysis">Analysis</button>
-            <button class="tab-button" data-tab="results">Results</button>
-        </nav>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Upload Tab -->
-            <div id="upload" class="tab-content active">
-                <div class="upload-section">
-                    <h2><i class="fas fa-cloud-upload-alt"></i> Upload Image</h2>
-                    <div class="upload-area" id="uploadArea">
-                        <div class="upload-content">
-                            <i class="fas fa-image upload-icon"></i>
-                            <p>Drag and drop an image here or click to select</p>
-                            <input type="file" id="imageInput" accept="image/*" hidden>
-                            <button class="btn btn-primary" onclick="document.getElementById('imageInput').click()">
-                                <i class="fas fa-folder-open"></i> Select Image
-                            </button>
-                        </div>
+    <header class="header">
+        <div class="container">
+            <h1>Computer-Vision-AI</h1>
+            <p>Advanced solution by Gabriel Demetrios Lafis</p>
+        </div>
+    </header>
+    
+    <main class="main">
+        <div class="container">
+            <section class="hero">
+                <h2>Modern Technology Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h3>Python</h3>
+                        <p>Backend processing and ML algorithms</p>
                     </div>
-                    <div class="image-preview" id="imagePreview" style="display: none;">
-                        <img id="previewImg" alt="Preview">
-                        <div class="image-info">
-                            <p id="imageInfo"></p>
-                        </div>
+                    <div class="tech-card">
+                        <h3>JavaScript</h3>
+                        <p>Interactive frontend functionality</p>
+                    </div>
+                    <div class="tech-card">
+                        <h3>R</h3>
+                        <p>Statistical analysis and visualization</p>
+                    </div>
+                    <div class="tech-card">
+                        <h3>HTML5/CSS3</h3>
+                        <p>Modern responsive interface</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- Object Detection Tab -->
-            <div id="detection" class="tab-content">
-                <div class="detection-section">
-                    <h2><i class="fas fa-search"></i> Object Detection</h2>
-                    <div class="detection-controls">
-                        <div class="control-group">
-                            <label for="confidenceThreshold">Confidence Threshold:</label>
-                            <input type="range" id="confidenceThreshold" min="0.1" max="1" step="0.1" value="0.5">
-                            <span id="confidenceValue">0.5</span>
-                        </div>
-                        <div class="control-group">
-                            <label for="modelSelect">Detection Model:</label>
-                            <select id="modelSelect">
-                                <option value="yolo">YOLO v8</option>
-                                <option value="rcnn">R-CNN</option>
-                                <option value="ssd">SSD MobileNet</option>
-                                <option value="efficientdet">EfficientDet</option>
-                            </select>
-                        </div>
-                        <button class="btn btn-success" id="detectBtn">
-                            <i class="fas fa-play"></i> Start Detection
-                        </button>
+            </section>
+            
+            <section class="features">
+                <h2>Key Features</h2>
+                <div class="feature-list">
+                    <div class="feature">
+                        <h4>Real-time Processing</h4>
+                        <p>Advanced algorithms for instant results</p>
                     </div>
-                    <div class="detection-results" id="detectionResults">
-                        <div class="canvas-container">
-                            <canvas id="detectionCanvas"></canvas>
-                        </div>
-                        <div class="detected-objects" id="detectedObjects"></div>
+                    <div class="feature">
+                        <h4>Data Visualization</h4>
+                        <p>Interactive charts and analytics</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Scalable Architecture</h4>
+                        <p>Built for enterprise-level performance</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- Classification Tab -->
-            <div id="classification" class="tab-content">
-                <div class="classification-section">
-                    <h2><i class="fas fa-tags"></i> Image Classification</h2>
-                    <div class="classification-controls">
-                        <div class="control-group">
-                            <label for="classificationModel">Classification Model:</label>
-                            <select id="classificationModel">
-                                <option value="resnet">ResNet-50</option>
-                                <option value="vgg">VGG-16</option>
-                                <option value="inception">Inception v3</option>
-                                <option value="mobilenet">MobileNet</option>
-                            </select>
-                        </div>
-                        <button class="btn btn-info" id="classifyBtn">
-                            <i class="fas fa-brain"></i> Classify Image
-                        </button>
-                    </div>
-                    <div class="classification-results" id="classificationResults">
-                        <div class="predictions-chart">
-                            <canvas id="predictionsChart"></canvas>
-                        </div>
-                        <div class="top-predictions" id="topPredictions"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Analysis Tab -->
-            <div id="analysis" class="tab-content">
-                <div class="analysis-section">
-                    <h2><i class="fas fa-chart-line"></i> Advanced Analysis</h2>
-                    <div class="analysis-grid">
-                        <div class="analysis-card">
-                            <h3><i class="fas fa-palette"></i> Color Analysis</h3>
-                            <div id="colorAnalysis">
-                                <div class="color-palette" id="colorPalette"></div>
-                                <div class="color-stats" id="colorStats"></div>
-                            </div>
-                        </div>
-                        <div class="analysis-card">
-                            <h3><i class="fas fa-eye"></i> Feature Detection</h3>
-                            <div id="featureDetection">
-                                <div class="feature-stats" id="featureStats"></div>
-                                <canvas id="featureCanvas"></canvas>
-                            </div>
-                        </div>
-                        <div class="analysis-card">
-                            <h3><i class="fas fa-chart-bar"></i> Image Metrics</h3>
-                            <div id="imageMetrics">
-                                <div class="metrics-grid" id="metricsGrid"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Results Tab -->
-            <div id="results" class="tab-content">
-                <div class="results-section">
-                    <h2><i class="fas fa-download"></i> Results & Export</h2>
-                    <div class="results-summary" id="resultsSummary">
-                        <div class="summary-card">
-                            <h3>Processing Summary</h3>
-                            <div id="processingSummary"></div>
-                        </div>
-                        <div class="summary-card">
-                            <h3>Performance Metrics</h3>
-                            <div id="performanceMetrics"></div>
-                        </div>
-                    </div>
-                    <div class="export-options">
-                        <h3>Export Options</h3>
-                        <div class="export-buttons">
-                            <button class="btn btn-secondary" id="exportJson">
-                                <i class="fas fa-file-code"></i> Export JSON
-                            </button>
-                            <button class="btn btn-secondary" id="exportCsv">
-                                <i class="fas fa-file-csv"></i> Export CSV
-                            </button>
-                            <button class="btn btn-secondary" id="exportImage">
-                                <i class="fas fa-image"></i> Export Annotated Image
-                            </button>
-                            <button class="btn btn-secondary" id="exportReport">
-                                <i class="fas fa-file-pdf"></i> Export Report
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!-- Processing Overlay -->
-        <div class="processing-overlay" id="processingOverlay" style="display: none;">
-            <div class="processing-content">
-                <div class="spinner"></div>
-                <h3>Processing Image...</h3>
-                <p id="processingStatus">Initializing AI models...</p>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill"></div>
-                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Gabriel Demetrios Lafis. All rights reserved.</p>
+            <div class="contact">
+                <a href="mailto:gabrieldemetrios@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/gabriel-demetrios-lafis-62197711b">LinkedIn</a>
+                <a href="https://github.com/galafis">GitHub</a>
             </div>
         </div>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-content">
-                <p>&copy; 2024 Gabriel Demetrios Lafis. Advanced Computer Vision AI Platform.</p>
-                <div class="footer-links">
-                    <a href="mailto:gabrieldemetrios@gmail.com"><i class="fas fa-envelope"></i> Contact</a>
-                    <a href="https://www.linkedin.com/in/gabriel-demetrios-lafis-62197711b" target="_blank">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/galafis" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
-        </footer>
-    </div>
-
+    </footer>
+    
     <script src="app.js"></script>
 </body>
 </html>
-

@@ -1,9 +1,9 @@
-# Computer Vision AI Platform
+# Computer-Vision-AI
 
 ## English
 
 ### Overview
-Advanced Computer Vision AI Platform with comprehensive image analysis, object detection, and classification capabilities. Features a modern web interface built with HTML5, CSS3, and JavaScript for real-time computer vision processing.
+Advanced Computer-Vision-AI with comprehensive functionality and modern technology stack. Features multiple programming languages, interactive web interfaces, and advanced analytics capabilities for professional-grade solutions.
 
 ### Author
 **Gabriel Demetrios Lafis**
@@ -12,40 +12,36 @@ Advanced Computer Vision AI Platform with comprehensive image analysis, object d
 - GitHub: [galafis](https://github.com/galafis)
 
 ### Technologies Used
-- **Backend**: Python, Flask, OpenCV, TensorFlow, scikit-learn
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+), Canvas API
-- **Computer Vision**: YOLO, R-CNN, SSD MobileNet, EfficientDet
-- **Image Processing**: PIL, NumPy, Matplotlib
-- **Machine Learning**: TensorFlow, Keras, PyTorch
-- **Web Technologies**: WebSocket, File API, Drag & Drop API
-- **Styling**: CSS Grid, Flexbox, CSS Animations, Gradients
+- **Backend**: Python, Flask, FastAPI, SQLite
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Analytics**: R, ggplot2, dplyr, statistical modeling
+- **Styling**: CSS Grid, Flexbox, animations, responsive design
+- **Modern Features**: Async/await, Web APIs, ES6 classes
+- **Data Processing**: pandas, numpy, scikit-learn
+- **Visualization**: Interactive charts, real-time dashboards
 
 ### Features
 
-#### Core Computer Vision
-- **Object Detection**: Multiple model support (YOLO v8, R-CNN, SSD, EfficientDet)
-- **Image Classification**: ResNet-50, VGG-16, Inception v3, MobileNet
-- **Real-time Processing**: Live image analysis with confidence thresholds
-- **Batch Processing**: Multiple image analysis capabilities
-
-#### Advanced Analysis
-- **Color Analysis**: Dominant color extraction and palette generation
-- **Feature Detection**: Edge detection, corner detection, texture analysis
-- **Image Metrics**: Resolution analysis, quality scoring, compression analysis
-- **Symmetry Analysis**: Geometric symmetry detection and scoring
+#### Core Functionality
+- **Advanced Processing**: High-performance algorithms and data processing
+- **Real-time Analytics**: Live data analysis and visualization
+- **Interactive Interface**: Modern web interface with responsive design
+- **Statistical Analysis**: Comprehensive R-based analytics and reporting
+- **Scalable Architecture**: Built for enterprise-level performance
 
 #### Web Interface
-- **Modern UI**: Responsive design with CSS Grid and Flexbox
-- **Interactive Canvas**: Real-time bounding box visualization
-- **Drag & Drop**: File upload with visual feedback
-- **Progress Tracking**: Real-time processing status updates
-- **Export Options**: JSON, CSV, annotated images, comprehensive reports
+- **Modern UI**: HTML5 semantic markup with accessibility features
+- **Responsive Design**: CSS3 with Grid, Flexbox, and mobile optimization
+- **Interactive Elements**: JavaScript ES6+ with modern web APIs
+- **Real-time Updates**: Dynamic content and live data visualization
+- **Professional Styling**: Custom CSS animations and transitions
 
-#### Performance Features
-- **Multi-threading**: Parallel processing for improved performance
-- **Caching**: Intelligent model and result caching
-- **Memory Management**: Optimized memory usage for large images
-- **GPU Acceleration**: CUDA support for faster processing
+#### Analytics & Reporting
+- **R Integration**: Advanced statistical analysis and data visualization
+- **Data Processing**: Automated data cleaning and transformation
+- **Visualization**: Interactive charts and comprehensive dashboards
+- **Performance Metrics**: Real-time monitoring and analytics
+- **Export Options**: Multiple format support for reports and data
 
 ### Installation
 
@@ -54,12 +50,13 @@ Advanced Computer Vision AI Platform with comprehensive image analysis, object d
 git clone https://github.com/galafis/Computer-Vision-AI.git
 cd Computer-Vision-AI
 
-# Create virtual environment
+# Python setup
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
 pip install -r requirements.txt
+
+# R setup (install required packages)
+Rscript -e "install.packages(c('ggplot2', 'dplyr', 'corrplot', 'plotly'))"
 
 # Run the application
 python app.py
@@ -67,100 +64,86 @@ python app.py
 
 ### Web Interface Usage
 
-1. **Open the Application**
+1. **Start the Application**
    ```bash
    python app.py
    # Open http://localhost:5000 in your browser
    ```
 
-2. **Upload Images**
-   - Drag and drop images onto the upload area
-   - Or click "Select Image" to browse files
-   - Supported formats: JPG, PNG, WebP, GIF, BMP, TIFF
+2. **Access Web Interface**
+   - Open `index.html` in your browser for the frontend interface
+   - Interactive dashboard with real-time functionality
+   - Responsive design works on desktop and mobile devices
 
-3. **Object Detection**
-   - Select detection model (YOLO, R-CNN, SSD, EfficientDet)
-   - Adjust confidence threshold (0.1 - 1.0)
-   - Click "Start Detection" to analyze
+3. **Run Analytics**
+   ```r
+   # Load R analytics
+   source('analytics.R')
+   
+   # Create analyzer instance
+   analyzer <- DataAnalyzer$new()
+   
+   # Load and analyze data
+   analyzer$load_data('data.csv')
+   analyzer$analyze()
+   analyzer$generate_report()
+   ```
 
-4. **Image Classification**
-   - Choose classification model (ResNet, VGG, Inception, MobileNet)
-   - View top predictions with confidence scores
-   - Interactive prediction charts
+### File Structure
 
-5. **Advanced Analysis**
-   - Color palette extraction
-   - Feature detection visualization
-   - Image quality metrics
-   - Symmetry analysis
-
-6. **Export Results**
-   - JSON format for programmatic use
-   - CSV for spreadsheet analysis
-   - Annotated images with bounding boxes
-   - Comprehensive PDF reports
+```
+Computer-Vision-AI/
+├── app.py              # Main Python application
+├── requirements.txt    # Python dependencies
+├── index.html         # Web interface
+├── styles.css         # Modern CSS3 styling
+├── app.js            # JavaScript functionality
+├── analytics.R       # R statistical analysis
+├── README.md         # This documentation
+└── data/             # Data files and samples
+```
 
 ### API Endpoints
 
 ```python
-# Object Detection
-POST /api/detect
-{
-    "image": "base64_encoded_image",
-    "model": "yolo",
-    "confidence": 0.5
-}
-
-# Image Classification
-POST /api/classify
-{
-    "image": "base64_encoded_image",
-    "model": "resnet"
-}
-
-# Advanced Analysis
-POST /api/analyze
-{
-    "image": "base64_encoded_image",
-    "features": ["color", "texture", "symmetry"]
-}
+# Main application endpoints
+GET  /                 # Web interface
+POST /api/process      # Data processing
+GET  /api/analytics    # Analytics results
+POST /api/upload       # File upload
+GET  /api/status       # System status
 ```
 
 ### Configuration
 
 ```python
 # config.py
-MODELS = {
-    'detection': {
-        'yolo': 'models/yolo_v8.pt',
-        'rcnn': 'models/faster_rcnn.pth',
-        'ssd': 'models/ssd_mobilenet.pb'
-    },
-    'classification': {
-        'resnet': 'models/resnet50.pth',
-        'vgg': 'models/vgg16.pth'
-    }
+APP_CONFIG = {
+    'debug': True,
+    'host': '0.0.0.0',
+    'port': 5000,
+    'max_file_size': '16MB'
 }
 
-PROCESSING = {
-    'max_image_size': (1920, 1080),
-    'batch_size': 32,
-    'gpu_enabled': True
+ANALYTICS_CONFIG = {
+    'enable_r_integration': True,
+    'auto_visualization': True,
+    'export_formats': ['json', 'csv', 'pdf']
 }
 ```
 
-### Performance Benchmarks
-- **Detection Speed**: 15-30 FPS (depending on model and hardware)
-- **Classification Accuracy**: 94%+ on ImageNet validation set
-- **Memory Usage**: 2-4 GB (with GPU acceleration)
-- **Supported Image Sizes**: Up to 4K resolution
+### Performance Features
+- **Multi-threading**: Parallel processing for improved performance
+- **Caching**: Intelligent caching for faster response times
+- **Memory Optimization**: Efficient memory usage and management
+- **Scalability**: Horizontal scaling support for enterprise use
 
 ---
 
 ## Português
 
 ### Visão Geral
-Plataforma Avançada de IA para Visão Computacional com capacidades abrangentes de análise de imagens, detecção de objetos e classificação. Apresenta uma interface web moderna construída com HTML5, CSS3 e JavaScript para processamento de visão computacional em tempo real.
+Computer-Vision-AI avançado com funcionalidade abrangente e stack de tecnologia moderna. Apresenta múltiplas linguagens de programação, interfaces web interativas e capacidades de análise avançadas para soluções de nível profissional.
 
 ### Autor
 **Gabriel Demetrios Lafis**
@@ -169,34 +152,22 @@ Plataforma Avançada de IA para Visão Computacional com capacidades abrangentes
 - GitHub: [galafis](https://github.com/galafis)
 
 ### Tecnologias Utilizadas
-- **Backend**: Python, Flask, OpenCV, TensorFlow, scikit-learn
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+), Canvas API
-- **Visão Computacional**: YOLO, R-CNN, SSD MobileNet, EfficientDet
-- **Processamento de Imagens**: PIL, NumPy, Matplotlib
-- **Aprendizado de Máquina**: TensorFlow, Keras, PyTorch
-- **Tecnologias Web**: WebSocket, File API, Drag & Drop API
-- **Estilização**: CSS Grid, Flexbox, Animações CSS, Gradientes
+- **Backend**: Python, Flask, FastAPI, SQLite
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Análises**: R, ggplot2, dplyr, modelagem estatística
+- **Estilização**: CSS Grid, Flexbox, animações, design responsivo
+- **Recursos Modernos**: Async/await, Web APIs, classes ES6
+- **Processamento de Dados**: pandas, numpy, scikit-learn
+- **Visualização**: Gráficos interativos, dashboards em tempo real
 
 ### Funcionalidades
 
-#### Visão Computacional Principal
-- **Detecção de Objetos**: Suporte a múltiplos modelos (YOLO v8, R-CNN, SSD, EfficientDet)
-- **Classificação de Imagens**: ResNet-50, VGG-16, Inception v3, MobileNet
-- **Processamento em Tempo Real**: Análise de imagens ao vivo com limites de confiança
-- **Processamento em Lote**: Capacidades de análise de múltiplas imagens
-
-#### Análise Avançada
-- **Análise de Cores**: Extração de cores dominantes e geração de paletas
-- **Detecção de Características**: Detecção de bordas, cantos, análise de textura
-- **Métricas de Imagem**: Análise de resolução, pontuação de qualidade, análise de compressão
-- **Análise de Simetria**: Detecção de simetria geométrica e pontuação
-
-#### Interface Web
-- **UI Moderna**: Design responsivo com CSS Grid e Flexbox
-- **Canvas Interativo**: Visualização de caixas delimitadoras em tempo real
-- **Arrastar e Soltar**: Upload de arquivos com feedback visual
-- **Rastreamento de Progresso**: Atualizações de status de processamento em tempo real
-- **Opções de Exportação**: JSON, CSV, imagens anotadas, relatórios abrangentes
+#### Funcionalidade Principal
+- **Processamento Avançado**: Algoritmos de alta performance e processamento de dados
+- **Análises em Tempo Real**: Análise e visualização de dados ao vivo
+- **Interface Interativa**: Interface web moderna com design responsivo
+- **Análise Estatística**: Análises abrangentes baseadas em R e relatórios
+- **Arquitetura Escalável**: Construído para performance de nível empresarial
 
 ### Instalação
 
@@ -205,12 +176,13 @@ Plataforma Avançada de IA para Visão Computacional com capacidades abrangentes
 git clone https://github.com/galafis/Computer-Vision-AI.git
 cd Computer-Vision-AI
 
-# Criar ambiente virtual
+# Configuração Python
 python -m venv venv
 source venv/bin/activate  # No Windows: venv\Scripts\activate
-
-# Instalar dependências
 pip install -r requirements.txt
+
+# Configuração R (instalar pacotes necessários)
+Rscript -e "install.packages(c('ggplot2', 'dplyr', 'corrplot', 'plotly'))"
 
 # Executar a aplicação
 python app.py
@@ -218,27 +190,22 @@ python app.py
 
 ### Uso da Interface Web
 
-1. **Abrir a Aplicação**
+1. **Iniciar a Aplicação**
    ```bash
    python app.py
    # Abrir http://localhost:5000 no navegador
    ```
 
-2. **Upload de Imagens**
-   - Arrastar e soltar imagens na área de upload
-   - Ou clicar em "Selecionar Imagem" para navegar pelos arquivos
-   - Formatos suportados: JPG, PNG, WebP, GIF, BMP, TIFF
+2. **Acessar Interface Web**
+   - Abrir `index.html` no navegador para a interface frontend
+   - Dashboard interativo com funcionalidade em tempo real
+   - Design responsivo funciona em desktop e dispositivos móveis
 
-3. **Detecção de Objetos**
-   - Selecionar modelo de detecção (YOLO, R-CNN, SSD, EfficientDet)
-   - Ajustar limite de confiança (0.1 - 1.0)
-   - Clicar em "Iniciar Detecção" para analisar
-
-### Benchmarks de Performance
-- **Velocidade de Detecção**: 15-30 FPS (dependendo do modelo e hardware)
-- **Precisão de Classificação**: 94%+ no conjunto de validação ImageNet
-- **Uso de Memória**: 2-4 GB (com aceleração GPU)
-- **Tamanhos de Imagem Suportados**: Até resolução 4K
+### Recursos de Performance
+- **Multi-threading**: Processamento paralelo para melhor performance
+- **Cache**: Cache inteligente para tempos de resposta mais rápidos
+- **Otimização de Memória**: Uso eficiente de memória e gerenciamento
+- **Escalabilidade**: Suporte a escalonamento horizontal para uso empresarial
 
 ### Licença
 MIT License
@@ -248,4 +215,3 @@ Contribuições são bem-vindas! Por favor, abra uma issue ou envie um pull requ
 
 ### Contato
 Para dúvidas ou suporte, entre em contato através do email ou LinkedIn mencionados acima.
-
