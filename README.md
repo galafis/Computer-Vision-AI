@@ -103,8 +103,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### 👨‍💻 Author
 **Gabriel Demetrios Lafis**
 - GitHub: [@galafis](https://github.com/galafis)
-- LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-lafis)
-- Email: gabriel.lafis@example.com
+- LinkedIn: [www.linkedin.com/in/gabriel-demetrios-lafis-62197711b](www.linkedin.com/in/gabriel-demetrios-lafis-62197711b)
+- gabrieldemetrios@gmail.com
 
 ---
 
@@ -207,5 +207,5 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 ### 👨‍💻 Autor
 **Gabriel Demetrios Lafis**
 - GitHub: [@galafis](https://github.com/galafis)
-- LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-lafis)
-- Email: gabriel.lafis@example.com
+- LinkedIn: [www.linkedin.com/in/gabriel-demetrios-lafis-62197711b](www.linkedin.com/in/gabriel-demetrios-lafis-62197711b)
+- gabrieldemetrios@gmail.com
