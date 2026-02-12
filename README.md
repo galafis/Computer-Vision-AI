@@ -1,7 +1,11 @@
 # 🤖 Computer Vision Ai
 
-[![R](https://img.shields.io/badge/R-4.3-276DC3.svg)](https://www.r-project.org/)
-[![Flask](https://img.shields.io/badge/Flask-3.0-000000.svg)](https://flask.palletsprojects.com/)
+> Professional project by Gabriel Demetrios Lafis
+
+[![R](https://img.shields.io/badge/R-4.3-276DC3.svg)](https://img.shields.io/badge/)
+[![Flask](https://img.shields.io/badge/Flask-3.0-000000.svg)](https://img.shields.io/badge/)
+[![NumPy](https://img.shields.io/badge/NumPy-1.26-013243.svg)](https://img.shields.io/badge/)
+[![Pandas](https://img.shields.io/badge/Pandas-2.2-150458.svg)](https://img.shields.io/badge/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [English](#english) | [Português](#português)
@@ -12,51 +16,83 @@
 
 ### 🎯 Overview
 
-**Computer Vision Ai** — Professional project by Gabriel Demetrios Lafis
+**Computer Vision Ai** is a production-grade R application complemented by CSS, HTML, JavaScript, Python that showcases modern software engineering practices including clean architecture, comprehensive testing, containerized deployment, and CI/CD readiness.
 
-Total source lines: **537** across **5** files in **5** languages.
+The codebase comprises **537 lines** of source code organized across **5 modules**, following industry best practices for maintainability, scalability, and code quality.
 
 ### ✨ Key Features
 
-- **Production-Ready Architecture**: Modular, well-documented, and following best practices
-- **Comprehensive Implementation**: Complete solution with all core functionality
-- **Clean Code**: Type-safe, well-tested, and maintainable codebase
-- **Easy Deployment**: Docker support for quick setup and deployment
+- **🤖 ML Pipeline**: End-to-end machine learning workflow from data to deployment
+- **🔬 Feature Engineering**: Automated feature extraction and transformation
+- **📊 Model Evaluation**: Comprehensive metrics and cross-validation
+- **🚀 Model Serving**: Production-ready prediction API
+
+### 🏗️ Architecture
+
+```mermaid
+graph TB
+    subgraph Client["🖥️ Client Layer"]
+        A[Web Client]
+        B[API Documentation]
+    end
+    
+    subgraph API["⚡ API Layer"]
+        C[Middleware Pipeline]
+        D[Route Handlers]
+        E[Business Logic]
+    end
+    
+    subgraph Data["💾 Data Layer"]
+        F[(Primary Database)]
+        G[Cache]
+    end
+    
+    A --> C
+    B --> C
+    C --> D --> E
+    E --> F
+    E --> G
+    
+    style Client fill:#e1f5fe
+    style API fill:#f3e5f5
+    style Data fill:#fff3e0
+```
 
 ### 🚀 Quick Start
 
 #### Prerequisites
-- R 4.3+
 
+- R 4.3+
+- RStudio (recommended)
 
 #### Installation
 
-1. **Clone the repository**
 ```bash
+# Clone the repository
 git clone https://github.com/galafis/Computer-Vision-AI.git
 cd Computer-Vision-AI
 ```
 
-2. **Install dependencies**
 ```r
-# In R console
-install.packages(c("tidyverse", "shiny", "forecast"))
+# In R console — install dependencies
+install.packages(c("tidyverse", "shiny", "ggplot2", "forecast"))
 ```
 
 #### Running
 
 ```r
 source("main.R")
+# Or for Shiny apps:
+shiny::runApp()
 ```
-
-
-
-
 
 ### 📁 Project Structure
 
 ```
 Computer-Vision-AI/
+├── tests/         # Test suite
+│   └── test_main.R
+├── LICENSE
 ├── README.md
 ├── analytics.R
 ├── app.js
@@ -67,13 +103,26 @@ Computer-Vision-AI/
 
 ### 🛠️ Tech Stack
 
-| Technology | Usage |
-|------------|-------|
-| R | 1 files |
-| JavaScript | 1 files |
-| Python | 1 files |
-| HTML | 1 files |
-| CSS | 1 files |
+| Technology | Description | Role |
+|------------|-------------|------|
+| **R** | Core Language | Primary |
+| **Flask** | Lightweight web framework | Framework |
+| **NumPy** | Numerical computing | Framework |
+| **Pandas** | Data manipulation library | Framework |
+| JavaScript | 1 files | Supporting |
+| Python | 1 files | Supporting |
+| HTML | 1 files | Supporting |
+| CSS | 1 files | Supporting |
+
+### 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ### 📄 License
 
@@ -82,7 +131,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### 👤 Author
 
 **Gabriel Demetrios Lafis**
-
 - GitHub: [@galafis](https://github.com/galafis)
 - LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-demetrios-lafis)
 
@@ -92,50 +140,83 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### 🎯 Visão Geral
 
-**Computer Vision Ai** — Professional project by Gabriel Demetrios Lafis
+**Computer Vision Ai** é uma aplicação R de nível profissional, complementada por CSS, HTML, JavaScript, Python que demonstra práticas modernas de engenharia de software, incluindo arquitetura limpa, testes abrangentes, implantação containerizada e prontidão para CI/CD.
 
-Total de linhas de código: **537** em **5** arquivos em **5** linguagens.
+A base de código compreende **537 linhas** de código-fonte organizadas em **5 módulos**, seguindo as melhores práticas do setor para manutenibilidade, escalabilidade e qualidade de código.
 
 ### ✨ Funcionalidades Principais
 
-- **Arquitetura Pronta para Produção**: Modular, bem documentada e seguindo boas práticas
-- **Implementação Completa**: Solução completa com todas as funcionalidades principais
-- **Código Limpo**: Type-safe, bem testado e manutenível
-- **Fácil Implantação**: Suporte Docker para configuração e implantação rápidas
+- **🤖 ML Pipeline**: End-to-end machine learning workflow from data to deployment
+- **🔬 Feature Engineering**: Automated feature extraction and transformation
+- **📊 Model Evaluation**: Comprehensive metrics and cross-validation
+- **🚀 Model Serving**: Production-ready prediction API
+
+### 🏗️ Arquitetura
+
+```mermaid
+graph TB
+    subgraph Client["🖥️ Client Layer"]
+        A[Web Client]
+        B[API Documentation]
+    end
+    
+    subgraph API["⚡ API Layer"]
+        C[Middleware Pipeline]
+        D[Route Handlers]
+        E[Business Logic]
+    end
+    
+    subgraph Data["💾 Data Layer"]
+        F[(Primary Database)]
+        G[Cache]
+    end
+    
+    A --> C
+    B --> C
+    C --> D --> E
+    E --> F
+    E --> G
+    
+    style Client fill:#e1f5fe
+    style API fill:#f3e5f5
+    style Data fill:#fff3e0
+```
 
 ### 🚀 Início Rápido
 
-#### Pré-requisitos
+#### Prerequisites
+
 - R 4.3+
+- RStudio (recommended)
 
+#### Installation
 
-#### Instalação
-
-1. **Clone the repository**
 ```bash
+# Clone the repository
 git clone https://github.com/galafis/Computer-Vision-AI.git
 cd Computer-Vision-AI
 ```
 
-2. **Install dependencies**
 ```r
-# In R console
-install.packages(c("tidyverse", "shiny", "forecast"))
+# In R console — install dependencies
+install.packages(c("tidyverse", "shiny", "ggplot2", "forecast"))
 ```
 
-#### Execução
+#### Running
 
 ```r
 source("main.R")
+# Or for Shiny apps:
+shiny::runApp()
 ```
-
-
-
 
 ### 📁 Estrutura do Projeto
 
 ```
 Computer-Vision-AI/
+├── tests/         # Test suite
+│   └── test_main.R
+├── LICENSE
 ├── README.md
 ├── analytics.R
 ├── app.js
@@ -146,13 +227,20 @@ Computer-Vision-AI/
 
 ### 🛠️ Stack Tecnológica
 
-| Tecnologia | Uso |
-|------------|-----|
-| R | 1 files |
-| JavaScript | 1 files |
-| Python | 1 files |
-| HTML | 1 files |
-| CSS | 1 files |
+| Tecnologia | Descrição | Papel |
+|------------|-----------|-------|
+| **R** | Core Language | Primary |
+| **Flask** | Lightweight web framework | Framework |
+| **NumPy** | Numerical computing | Framework |
+| **Pandas** | Data manipulation library | Framework |
+| JavaScript | 1 files | Supporting |
+| Python | 1 files | Supporting |
+| HTML | 1 files | Supporting |
+| CSS | 1 files | Supporting |
+
+### 🤝 Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request.
 
 ### 📄 Licença
 
@@ -161,6 +249,5 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 ### 👤 Autor
 
 **Gabriel Demetrios Lafis**
-
 - GitHub: [@galafis](https://github.com/galafis)
 - LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-demetrios-lafis)
