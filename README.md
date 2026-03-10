@@ -1,253 +1,118 @@
-# 🤖 Computer Vision Ai
+# Computer Vision Toolkit
 
-> Professional project by Gabriel Demetrios Lafis
+<div align="center">
 
-[![R](https://img.shields.io/badge/R-4.3-276DC3.svg)](https://img.shields.io/badge/)
-[![Flask](https://img.shields.io/badge/Flask-3.0-000000.svg)](https://img.shields.io/badge/)
-[![NumPy](https://img.shields.io/badge/NumPy-1.26-013243.svg)](https://img.shields.io/badge/)
-[![Pandas](https://img.shields.io/badge/Pandas-2.2-150458.svg)](https://img.shields.io/badge/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 
-[English](#english) | [Português](#português)
+</div>
+
+**[English](#english)** | **[Portugues (BR)](#portugues-br)**
 
 ---
 
 ## English
 
-### 🎯 Overview
+### Overview
 
-**Computer Vision Ai** is a production-grade R application complemented by CSS, HTML, JavaScript, Python that showcases modern software engineering practices including clean architecture, comprehensive testing, containerized deployment, and CI/CD readiness.
+A computer vision image processing toolkit built from scratch using NumPy. Implements 2D convolution with pre-defined kernels (blur, sharpen, edge detection, Sobel, emboss), histogram equalization, RGB/HSV/grayscale color space conversions, image resize, rotation, flip, and template matching via normalized cross-correlation.
 
-The codebase comprises **537 lines** of source code organized across **5 modules**, following industry best practices for maintainability, scalability, and code quality.
-
-### ✨ Key Features
-
-- **🤖 ML Pipeline**: End-to-end machine learning workflow from data to deployment
-- **🔬 Feature Engineering**: Automated feature extraction and transformation
-- **📊 Model Evaluation**: Comprehensive metrics and cross-validation
-- **🚀 Model Serving**: Production-ready prediction API
-
-### 🏗️ Architecture
+### Architecture
 
 ```mermaid
-graph TB
-    subgraph Client["🖥️ Client Layer"]
-        A[Web Client]
-        B[API Documentation]
-    end
-    
-    subgraph API["⚡ API Layer"]
-        C[Middleware Pipeline]
-        D[Route Handlers]
-        E[Business Logic]
-    end
-    
-    subgraph Data["💾 Data Layer"]
-        F[(Primary Database)]
-        G[Cache]
-    end
-    
-    A --> C
-    B --> C
-    C --> D --> E
-    E --> F
-    E --> G
-    
-    style Client fill:#e1f5fe
-    style API fill:#f3e5f5
-    style Data fill:#fff3e0
+graph TD
+    A[Input Image] --> B{Operation}
+    B -->|Filter| C[2D Convolution]
+    B -->|Enhance| D[Histogram Equalization]
+    B -->|Convert| E[Color Space Conversion]
+    B -->|Transform| F[Resize / Rotate / Flip]
+    B -->|Search| G[Template Matching]
+    C --> H[Blur / Sharpen / Edge / Sobel / Emboss]
+    E --> I[RGB to Grayscale / HSV]
+    G --> J[NCC Location + Score]
+    H --> K[Processed Image]
+    D --> K
+    I --> K
+    F --> K
 ```
 
-### 🚀 Quick Start
+### Features
 
-#### Prerequisites
+- **Convolution Filters**: Blur, Gaussian blur, sharpen, edge detection, Sobel X/Y, emboss
+- **Histogram**: Computation and equalization for contrast enhancement
+- **Color Spaces**: RGB to grayscale (luminance), RGB to HSV
+- **Transforms**: Nearest-neighbor resize, 90-degree rotation, horizontal/vertical flip
+- **Template Matching**: Normalized cross-correlation search
 
-- R 4.3+
-- RStudio (recommended)
+### Usage
 
-#### Installation
+```python
+from src.image_processing import ImageProcessor
+import numpy as np
+
+proc = ImageProcessor()
+image = np.random.randint(0, 256, (100, 100, 3), dtype=np.uint8)
+
+blurred = proc.apply_filter(image, "gaussian_blur")
+edges = proc.apply_filter(image, "edge_detect")
+gray = proc.rgb_to_grayscale(image)
+equalized = proc.histogram_equalization(gray)
+resized = proc.resize(image, 50, 50)
+```
+
+### Running Tests
 
 ```bash
-# Clone the repository
-git clone https://github.com/galafis/Computer-Vision-AI.git
-cd Computer-Vision-AI
+pytest tests/ -v
 ```
 
-```r
-# In R console — install dependencies
-install.packages(c("tidyverse", "shiny", "ggplot2", "forecast"))
-```
-
-#### Running
-
-```r
-source("main.R")
-# Or for Shiny apps:
-shiny::runApp()
-```
-
-### 📁 Project Structure
-
-```
-Computer-Vision-AI/
-├── tests/         # Test suite
-│   └── test_main.R
-├── LICENSE
-├── README.md
-├── analytics.R
-├── app.js
-├── app.py
-├── package.json
-└── requirements.txt
-```
-
-### 🛠️ Tech Stack
-
-| Technology | Description | Role |
-|------------|-------------|------|
-| **R** | Core Language | Primary |
-| **Flask** | Lightweight web framework | Framework |
-| **NumPy** | Numerical computing | Framework |
-| **Pandas** | Data manipulation library | Framework |
-| JavaScript | 1 files | Supporting |
-| Python | 1 files | Supporting |
-| HTML | 1 files | Supporting |
-| CSS | 1 files | Supporting |
-
-### 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### 👤 Author
+### Author
 
 **Gabriel Demetrios Lafis**
-- GitHub: [@galafis](https://github.com/galafis)
-- LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-demetrios-lafis)
+- [GitHub](https://github.com/galafis)
+- [LinkedIn](https://www.linkedin.com/in/gabriel-demetrios-lafis-62197711b)
 
 ---
 
-## Português
+## Portugues BR
 
-### 🎯 Visão Geral
+### Visao Geral
 
-**Computer Vision Ai** é uma aplicação R de nível profissional, complementada por CSS, HTML, JavaScript, Python que demonstra práticas modernas de engenharia de software, incluindo arquitetura limpa, testes abrangentes, implantação containerizada e prontidão para CI/CD.
+Um toolkit de processamento de imagens para visao computacional construido do zero usando NumPy. Implementa convolucao 2D com kernels pre-definidos (blur, sharpen, deteccao de bordas, Sobel, emboss), equalizacao de histograma, conversoes de espaco de cor RGB/HSV/escala de cinza, redimensionamento, rotacao, espelhamento e correspondencia de template via correlacao cruzada normalizada.
 
-A base de código compreende **537 linhas** de código-fonte organizadas em **5 módulos**, seguindo as melhores práticas do setor para manutenibilidade, escalabilidade e qualidade de código.
-
-### ✨ Funcionalidades Principais
-
-- **🤖 ML Pipeline**: End-to-end machine learning workflow from data to deployment
-- **🔬 Feature Engineering**: Automated feature extraction and transformation
-- **📊 Model Evaluation**: Comprehensive metrics and cross-validation
-- **🚀 Model Serving**: Production-ready prediction API
-
-### 🏗️ Arquitetura
+### Arquitetura
 
 ```mermaid
-graph TB
-    subgraph Client["🖥️ Client Layer"]
-        A[Web Client]
-        B[API Documentation]
-    end
-    
-    subgraph API["⚡ API Layer"]
-        C[Middleware Pipeline]
-        D[Route Handlers]
-        E[Business Logic]
-    end
-    
-    subgraph Data["💾 Data Layer"]
-        F[(Primary Database)]
-        G[Cache]
-    end
-    
-    A --> C
-    B --> C
-    C --> D --> E
-    E --> F
-    E --> G
-    
-    style Client fill:#e1f5fe
-    style API fill:#f3e5f5
-    style Data fill:#fff3e0
+graph TD
+    A[Imagem de Entrada] --> B{Operacao}
+    B -->|Filtrar| C[Convolucao 2D]
+    B -->|Melhorar| D[Equalizacao de Histograma]
+    B -->|Converter| E[Conversao de Cor]
+    B -->|Transformar| F[Redimensionar / Rotacionar]
+    B -->|Buscar| G[Template Matching]
+    C --> H[Filtros Aplicados]
+    H --> K[Imagem Processada]
+    D --> K
+    E --> K
+    F --> K
 ```
 
-### 🚀 Início Rápido
+### Funcionalidades
 
-#### Prerequisites
+- **Filtros de Convolucao**: Blur, blur gaussiano, nitidez, deteccao de bordas, Sobel, emboss
+- **Histograma**: Computacao e equalizacao para melhoria de contraste
+- **Espacos de Cor**: RGB para escala de cinza, RGB para HSV
+- **Transformacoes**: Redimensionamento, rotacao 90 graus, espelhamento
+- **Template Matching**: Busca por correlacao cruzada normalizada
 
-- R 4.3+
-- RStudio (recommended)
-
-#### Installation
+### Executando os Testes
 
 ```bash
-# Clone the repository
-git clone https://github.com/galafis/Computer-Vision-AI.git
-cd Computer-Vision-AI
+pytest tests/ -v
 ```
 
-```r
-# In R console — install dependencies
-install.packages(c("tidyverse", "shiny", "ggplot2", "forecast"))
-```
+---
 
-#### Running
+## License
 
-```r
-source("main.R")
-# Or for Shiny apps:
-shiny::runApp()
-```
-
-### 📁 Estrutura do Projeto
-
-```
-Computer-Vision-AI/
-├── tests/         # Test suite
-│   └── test_main.R
-├── LICENSE
-├── README.md
-├── analytics.R
-├── app.js
-├── app.py
-├── package.json
-└── requirements.txt
-```
-
-### 🛠️ Stack Tecnológica
-
-| Tecnologia | Descrição | Papel |
-|------------|-----------|-------|
-| **R** | Core Language | Primary |
-| **Flask** | Lightweight web framework | Framework |
-| **NumPy** | Numerical computing | Framework |
-| **Pandas** | Data manipulation library | Framework |
-| JavaScript | 1 files | Supporting |
-| Python | 1 files | Supporting |
-| HTML | 1 files | Supporting |
-| CSS | 1 files | Supporting |
-
-### 🤝 Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request.
-
-### 📄 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-### 👤 Autor
-
-**Gabriel Demetrios Lafis**
-- GitHub: [@galafis](https://github.com/galafis)
-- LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-demetrios-lafis)
+MIT License - see [LICENSE](LICENSE) for details.
